@@ -28,7 +28,7 @@ const search = () => {
 </script>
 
 <template>
-    <Head title="- Latest Listings"/>
+    <Head title="- Latest Image Uploaded"/>
 
     <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-2">

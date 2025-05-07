@@ -23,7 +23,7 @@ const form = useForm({
 </script>
 
 <template>
-    <Head title="- Edit Listing" />
+    <Head title="- Edit Image" />
 
     <Container>
         <div class="mb-6">

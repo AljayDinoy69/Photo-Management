@@ -20,11 +20,11 @@ const form = useForm({
 </script>
 
 <template>
-    <Head title="- New Listing" />
+    <Head title="- Create Image" />
 
     <Container>
         <div class="mb-6">
-            <Title>Create a new list</Title>
+            <Title>Create a new image</Title>
         </div>
 
         <ErrorMessages :errors="form.errors"/>

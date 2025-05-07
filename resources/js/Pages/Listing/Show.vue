@@ -19,7 +19,7 @@ const deleteListing = () => {
 </script>
 
 <template>
-    <Head title="- Listing Details"/>
+    <Head title="- Image Details"/>
    <Container class="flex gap-4">
     <div class="w-1/4 rounded-md overflow-hidden">
         <img :src="listing.image ? `/storage/${listing.image}` : '/storage/images/listing/default.jpg'"
