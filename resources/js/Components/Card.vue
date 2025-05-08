@@ -27,7 +27,7 @@ const selectTag = (tag) => {
 </script>
 
 <template>
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden dark:bg-slate-800 h-full flex fex-col justify-between">
+    <div class="bg-slate-300 rounded-lg shadow-lg overflow-hidden dark:bg-slate-800 h-full flex fex-col justify-between">
         <div>
             <!-- image -->
              <Link :href="route('listing.show', listing.id)">

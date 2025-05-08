@@ -96,7 +96,7 @@ class ListingController extends Controller implements HasMiddleware
 
         $request->user()->listings()->create($fields);
 
-        return redirect()->route('dashboard')->with('success', 'Image created successfully.');
+        return redirect()->route('dashboard')->with('status', 'Image created successfully.');
     }
 
     /**
@@ -163,9 +163,9 @@ class ListingController extends Controller implements HasMiddleware
 
         $fields['tags'] = implode(',', array_unique(array_filter(array_map('trim', explode(',', $request->tags)))));
 
-        $listing->update($fields);
+        $listing->update([...$fields, 'approved' => false]);
 
-        return redirect()->route('dashboard')->with('success', 'Image updated successfully.');
+        return redirect()->route('dashboard')->with('status', 'Image updated successfully.');
     }
 
     /**
@@ -181,6 +181,6 @@ class ListingController extends Controller implements HasMiddleware
 
         $listing->delete();
 
-        return redirect()->route('dashboard')->with('success', 'Image deleted successfully.');
+        return redirect()->route('dashboard')->with('status', 'Image deleted successfully.');
     }
 }
