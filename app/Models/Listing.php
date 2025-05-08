@@ -24,19 +24,23 @@ class Listing extends Model
     }
 
     public function scopeFilter($query, array $filters) {
-        if (!empty($filters['search'])) {
+        if ($filters['search'] ?? false) {
             $query->where(function ($q) use ($filters) {
-                $q->where('title', 'like', '%' . $filters['search'] . '%')
-                  ->orWhere('desc', 'like', '%' . $filters['search'] . '%');
+                $q->where('title', 'like', '%' . request('search') . '%')
+                  ->orWhere('desc', 'like', '%' . request('search') . '%');
             });
         }
     
-        if (!empty($filters['user_id'])) {
-            $query->where('user_id', $filters['user_id']);
+        if ($filters['user_id'] ?? false) {
+            $query->where('user_id', request('user_id'));
         }
     
-        if (!empty($filters['tag'])) {
-            $query->where('tags', 'like', '%' . $filters['tag'] . '%');
+        if ($filters['tag'] ?? false) {
+            $query->where('tags', 'like', '%' . request('tag') . '%');
+        }
+
+        if ($filters['disapproved'] ?? false) {
+            $query->where('approved', false);
         }
     }
     

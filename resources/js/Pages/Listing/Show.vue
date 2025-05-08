@@ -16,10 +16,29 @@ const deleteListing = () => {
     }
 }
 
+const toggleApprove = () => {
+    let msg = props.listing.approved ? 'Are you sure you want to disapprove this image?' 
+    : 'Are you sure you want to approve this image?'
+
+    if(confirm(msg)){
+        router.put(route('admin.approve', props.listing.id))
+    }
+}
+
 </script>
 
 <template>
     <Head title="- Image Details"/>
+    
+        <div v-if="$page.props.auth.user.role === 'admin'" 
+             class="bg-slate-800 text-white mb-6 p-6 rounded-md font-medium flex items-center justify-between">
+            <p>This image is {{ listing.approved ? 'Approved' : 'Disapproved' }}.</p>
+
+            <button @click.prevent="toggleApprove" class="bg-slate-600 px-3 py-1 rounded-md">
+                {{ listing.approved ? 'Disapprove it' : 'Approve it' }}
+            </button>
+        </div>
+
    <Container class="flex gap-4">
     <div class="w-1/4 rounded-md overflow-hidden">
         <img :src="listing.image ? `/storage/${listing.image}` : '/storage/images/listing/default.jpg'"
