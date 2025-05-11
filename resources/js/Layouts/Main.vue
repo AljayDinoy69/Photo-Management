@@ -39,10 +39,17 @@ const show = ref(false);
                 </Link>
 
                     <div v-show="show" @click="show=false" class="absolute z-50 top-16 right-0 bg-slate-800 text-white rounded-lg border-slate-100 border overflow-hidden w-40">
-                        <Link :href="route('listing.create')" class="block w-full px-6 py-3 hover:bg-slate-700 text-left"><i class="fa fa-user"></i> New Listing</Link>
-                        <Link :href="route('profile.edit')" class="block w-full px-6 py-3 hover:bg-slate-700 text-left"><i class="fa fa-user"></i> Profile</Link>
-                        <Link :href="route('dashboard')" class="block w-full px-6 py-3 hover:bg-slate-700 text-left"><i class="fa fa-house-user"></i> Dashboard</Link>
-                        <Link :href="route('logout')" method="post" as="button" class="block w-full px-6 py-3 hover:bg-slate-700 text-left"><i class="fa fa-right-from-bracket"></i> Logout</Link>
+                        <Link :href="route('listing.create')" class="block w-full px-6 py-3 
+                        hover:bg-slate-700 text-left"><i class="fa-solid fa-arrow-up-from-bracket"></i>  Upload</Link>
+
+                        <Link :href="route('profile.edit')" class="block w-full px-6 py-3 
+                        hover:bg-slate-700 text-left"><i class="fa fa-user"></i>  Profile</Link>
+
+                        <Link :href="route('dashboard')" class="block w-full px-6 py-3 
+                        hover:bg-slate-700 text-left"><i class="fa fa-house-user"></i>  Dashboard</Link>
+
+                        <Link :href="route('logout')" method="post" as="button" class="block w-full 
+                        px-6 py-3 hover:bg-slate-700 text-left"><i class="fa fa-right-from-bracket"></i>  Logout</Link>
                     </div>
                 </div>
 

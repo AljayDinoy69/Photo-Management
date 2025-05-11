@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Listing;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,8 +14,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(6)->create();
+        // Create 1 admin user with default password
+        $user = User::factory()->create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'password' => Hash::make('password123'),
+            'role' => 'admin'
+        ]);
 
-        Listing::factory(50)->create();
+        // Create 5 listings for that user
+        Listing::factory(5)->create([
+            'user_id' => $user->id,
+        ]);
     }
 }

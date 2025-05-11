@@ -31,8 +31,8 @@ const deleteImage = (id) => {
         <Title>Your latest Images</Title>
         
         <div class="flex items-center gap-4 text-xs">
-            <p>Approved <i class="fa-solid fa-thumbs-up text-green-500"></i></p>
-            <p>Pending approval <i class="fa-solid fa-hourglass-end text-red-500"></i></p>
+            <p>Approved <i class="fa-solid fa-check-circle text-green-500"></i></p>
+            <p>Pending approval <i class="fa-solid fa-xmark-circle text-red-500"></i></p>
         </div>
       </div>
 

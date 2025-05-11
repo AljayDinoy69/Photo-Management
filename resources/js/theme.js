@@ -1,27 +1,26 @@
 function setThemeOnLoad() {
     if (
         localStorage.theme === 'dark' ||
-        (!("theme" in localStorage) && 
-            window.matchMedia("(prefers-color-scheme: dark").matches)
+        (!('theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-        document.documentElement.classList.add("dark");
+        document.documentElement.classList.add('dark');
     } else {
-        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.remove('dark');
     }
 }
 
 function switchTheme() {
     if (
         localStorage.theme === 'dark' ||
-        (!("theme" in localStorage) && 
-            wwindow.matchMedia("(prefers-color-scheme: dark)").matches
-        )
+        (!('theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-        document.documentElement.classList.remove("dark");
-        localStorage.theme = "light";
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
     } else {
-        document.documentElement.classList.add("dark");
-        localStorage.theme = "dark";
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
     }
 }
 
